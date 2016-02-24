@@ -20,25 +20,27 @@
 <body ng-controller="MainController as main">
 
 <!-- <div ng-repeat="weather in main">  -->
+
+
 <p>Today</p>
+<p>{{main.all.weather.dayf.day[0].part[0].t}}</p>
+<p>High: {{main.all.weather.dayf.day[0].hi}} + {{main.rand - main.all.weather.dayf.day[0].hi}}</p>
+<p>Low: {{main.all.weather.dayf.day[0].low}} + {{main.randL - main.all.weather.dayf.day[0].low}}</p>
+
+<p>{{main.all.weather.dayf.day[1]._t}}</p>
 <p>{{main.all.weather.dayf.day[1].part[1].t}}</p>
-<p>High: {{main.all.weather.dayf.day[1].hi}}</p>
-<p>Low: {{main.all.weather.dayf.day[1].low}}</p>
+<p>High: {{main.all.weather.dayf.day[1].hi}} + {{main.rand - main.all.weather.dayf.day[1].hi}}</p>
+<p>Low: {{main.all.weather.dayf.day[1].low}} + {{main.randL - main.all.weather.dayf.day[1].low}}</p>
 
 <p>{{main.all.weather.dayf.day[2]._t}}</p>
 <p>{{main.all.weather.dayf.day[2].part[1].t}}</p>
-<p>High: {{main.all.weather.dayf.day[2].hi}}</p>
-<p>Low: {{main.all.weather.dayf.day[2].low}}</p>
+<p>High: {{main.all.weather.dayf.day[2].hi}} + {{main.rand - main.all.weather.dayf.day[2].hi}}</p>
+<p>Low: {{main.all.weather.dayf.day[2].low}} + {{main.randL - main.all.weather.dayf.day[2].low}}</p>
 
 <p>{{main.all.weather.dayf.day[3]._t}}</p>
 <p>{{main.all.weather.dayf.day[3].part[1].t}}</p>
-<p>High: {{main.all.weather.dayf.day[3].hi}}</p>
-<p>Low: {{main.all.weather.dayf.day[3].low}}</p>
-
-<p>{{main.all.weather.dayf.day[4]._t}}</p>
-<p>{{main.all.weather.dayf.day[4].part[1].t}}</p>
-<p>High: {{main.all.weather.dayf.day[4].hi}}</p>
-<p>Low: {{main.all.weather.dayf.day[4].low}}</p>
+<p>High: {{main.all.weather.dayf.day[3].hi}} + {{main.rand - main.all.weather.dayf.day[3].hi}}</p>
+<p>Low: {{main.all.weather.dayf.day[3].low}} + {{main.randL - main.all.weather.dayf.day[3].low }}</p>
 
 <!-- </div> -->
 
