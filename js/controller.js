@@ -9,9 +9,7 @@ MainController.$inject = ['$http'];
     self.rand = "";
     self.randL = "";
 
-    for (i = 0; i <= 5; i++) {
-      $http.get("http://wxdata.weather.com/wxdata/weather/local/UKXX0085?CC=*&unit=m&dayf="+i+"",
-      {
+      $http.get("http://wxdata.weather.com/wxdata/weather/local/UKXX0085?CC=*&unit=m&dayf=4", {
         transformResponse: function (cnv) {
           var x2js = new X2JS();
           var aftCnv = x2js.xml_str2json(cnv);
@@ -19,13 +17,13 @@ MainController.$inject = ['$http'];
         }
       })
       .success(function (response) {
-        self.all = response;
+        console.log(response.weather.dayf.day)
+        self.all = response.weather.dayf.day
       });
-  }
 
   function randHigh() {
     var arr = [];
-    for (i = 0; arr.length < 29; i++) {
+    for (var i = 0; arr.length < 29; i++) {
      i = Math.floor(Math.random() * 11 | 0) + 15
      arr.push(i);
    }
@@ -36,7 +34,7 @@ MainController.$inject = ['$http'];
 
   function randLow() {
     var arr = [];
-    for (i = 0; arr.length < 29; i++) {
+    for (var i = 0; arr.length < 29; i++) {
      i = Math.floor(Math.random() * 11 | 0) + 5
      arr.push(i);
    }
@@ -44,7 +42,6 @@ MainController.$inject = ['$http'];
    self.randL = Math.floor(sum/arr.length);
   }
   randLow();
-
 
 };
 
