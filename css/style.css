@@ -27,7 +27,6 @@ main {
   border: 1px solid gray;
   padding: 20px;
   width: calc(25% - 10px);
-  min-height: 200px;
   display: inline-block;
 }
 
