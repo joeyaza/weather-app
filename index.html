@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/reset.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -18,10 +19,25 @@
   <script type="text/javascript" src="./js/xml2js.js"></script>
 </head>
 <body ng-controller="MainController as main">
-  <div class = "container">
-   <ul ng-repeat ="weather in main.all">
-     <li><b>DAY:</b> {{weather._t}} <b>WEATHER:</b> {{weather.part[1].t}} <b>HIGH:</b> {{weather.hi}} <b>LOW:</b> {{weather.low}}</li>
-   </ul>
- </div>
+<header>
+  <h1>Joe's <span>Weather Forecast</span></h1>
+</header>
+  <main>
+    <div class="day animated pulse" ng-repeat ="weather in main.all">
+      <ul>
+        <li><h2>{{weather._t}}</h2></li>
+        <li><h3>{{weather.part[1].bt}}</h3></li>
+        <li><p>High: {{weather.hi}}° <span>{{main.calcDiff(weather.hi, main.rand)}}<span></p></li>
+        <li><p>Low: {{weather.low}}° <span>{{main.calcDiff(weather.low, main.randL)}}<span></p></li>
+      </ul>
+    </div>
+    <div class="averages">
+      <ul>
+        <li><h3>Average temperature over the past 28 days:</h3></li>
+        <li>High: {{main.rand}}°</li>
+        <li>Low: {{main.randL}}°</li>
+      </ul>
+    </div>
+  </main>
 </body>
 </html>

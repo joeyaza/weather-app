@@ -8,6 +8,7 @@ MainController.$inject = ['$http'];
     self.all = [];
     self.rand = "";
     self.randL = "";
+    self.calcDiff = calcDiff;
 
       $http.get("http://wxdata.weather.com/wxdata/weather/local/UKXX0085?CC=*&unit=m&dayf=4", {
         transformResponse: function (cnv) {
@@ -17,8 +18,8 @@ MainController.$inject = ['$http'];
         }
       })
       .success(function (response) {
-        console.log(response.weather.dayf.day)
-        self.all = response.weather.dayf.day
+        console.log(response);
+        self.all = response.weather.dayf.day;
       });
 
   function randHigh() {
@@ -43,7 +44,12 @@ MainController.$inject = ['$http'];
   }
   randLow();
 
+  function calcDiff(temp, average) {
+    var diff = temp - average;
+    if (diff > 0) {
+      diff = "+" + diff;
+    }
+    return diff === 0 ? "" : diff;
+  }
+
 };
-
-
-

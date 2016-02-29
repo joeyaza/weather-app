@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  background-color: #F3F3F3;
+  line-height: 1.2;
+}
+
+header {
+  background-color: #5F77AD;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+main {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 0 13px;
+}
+
+.day {
+  background-color: #FFFFFF;
+  border: 1px solid gray;
+  padding: 20px;
+  width: calc(25% - 10px);
+  min-height: 200px;
+  display: inline-block;
+}
+
+.day:not(:first-child) {
+  margin-left: 13px;
+}
+
+.averages {
+  background-color: #FFFFFF;
+  border: 1px solid gray;
+  padding: 20px;
+  margin: 13px auto;
+  text-align: center;
+}
+
+h1 span {
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+h3 {
+  font-weight: 800;
+}
+
+p span {
+  font-size: 14px;
+  font-weight: 800;
+}
