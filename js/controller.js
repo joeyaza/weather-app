@@ -18,7 +18,6 @@ MainController.$inject = ['$http'];
         }
       })
       .success(function (response) {
-        console.log(response);
         self.all = response.weather.dayf.day;
       });
 
